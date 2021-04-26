@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h2>Todo app</h2>
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <h2>Todo app</h2>
+      </div>
+    </ErrorBoundary>
   );
 }
 
