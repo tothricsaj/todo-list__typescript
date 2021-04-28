@@ -2,6 +2,7 @@
   --dark-grey: #282c34;
   --light-blue: #31aafb;
   --dark-blue: #39669a;
+  --candy-pink: #ef7a85;
 }
 
 .App {
@@ -22,6 +23,11 @@
   border: 1px solid var(--light-blue);
   color: var(--light-blue);
   cursor: pointer;
+}
+
+.button__red {
+  border-color: var(--candy-pink);
+  color: var(--candy-pink);
 }
 
 .input {

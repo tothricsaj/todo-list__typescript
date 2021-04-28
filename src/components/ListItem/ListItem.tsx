@@ -4,7 +4,7 @@ import './ListItem.css'
 
 const listItem = (props: any) => {
   return (
-      <p>{props.txt}</p>
+      <p className="list-item">{props.txt}</p>
   )
 }
 

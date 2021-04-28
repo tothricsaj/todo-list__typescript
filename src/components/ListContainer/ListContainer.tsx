@@ -38,20 +38,34 @@ const ListContainer = (props: any) => {
       <h3>List Container</h3>
       <ul>
         {todoList.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="list-item">
             <ListItem txt={item.todoName} />
-            <span onClick={() => removeListItem(item.id)}>Delete</span>
+            <span
+              className="button button__red"
+              style={{
+                width: '20%',
+              }}
+              onClick={() => removeListItem(item.id)}>Delete</span>
           </li>
         ))}
       </ul>
       <div className="add-item-wrapper">
-        <div className="button" onClick={addListItem}>+</div>
+        <div
+          className="button"
+          onClick={addListItem}
+          style={{
+            marginLeft: '0'
+          }}
+          >+</div>
         <input
           className="input"
           onChange={changeHandler}
           value={userInput}
           type="text"
           placeholder="Add Item"
+          style={{
+            width: '50%'
+          }}
         />
       </div>
     </div>
