@@ -33,6 +33,12 @@ const ListContainer = (props: any) => {
     setUserInput(event.target.value)
   }
 
+  const keyDownHandler= (event: any) => {
+    if(event.keyCode === 13) {
+      addListItem()
+    }
+  }
+
   return (
     <div className="container">
       <h3>List Container</h3>
@@ -66,6 +72,7 @@ const ListContainer = (props: any) => {
           style={{
             width: '50%'
           }}
+          onKeyDown={keyDownHandler}
         />
       </div>
     </div>
