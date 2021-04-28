@@ -10,3 +10,28 @@
   background-color: var(--dark-grey);
   color: var(--dark-blue)
 }
+
+.button {
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid var(--light-blue);
+  color: var(--light-blue);
+  cursor: pointer;
+}
+
+.input {
+  background-color: transparent;
+  border: unset;
+  border-bottom: 1px solid var(--light-blue);
+  padding: 5px;
+  color: var(--light-blue);
+}
+
+.input:focus-visible {
+  border: 1px solid var(--light-blue);
+}

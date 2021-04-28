@@ -1,5 +1,13 @@
 .container {
   width: 500px;
   margin: auto;
+  padding: 15px;
   border: 1px solid var(--light-blue);
+}
+
+.add-item-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
