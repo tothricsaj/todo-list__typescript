@@ -1,6 +1,7 @@
 import React from 'react'
 
 import ListItem from '../ListItem/ListItem'
+import StatusSelector from '../StatusSelector/StatusSelector'
 
 import style from './ListContainer.module.css'
 
@@ -34,6 +35,7 @@ const ListContainer = (props: any) => {
   }
 
   const keyDownHandler= (event: any) => {
+    // TODO(tothricsaj): don't put empty string into todoList
     if(event.keyCode === 13) {
       addListItem()
     }
@@ -41,7 +43,7 @@ const ListContainer = (props: any) => {
 
   return (
     <div className={style.container}>
-      <h3>List Container</h3>
+      <StatusSelector />
       <ul>
         {todoList.map((item, index) => (
           <li key={index} className={style.list_item}>

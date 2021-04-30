@@ -25,9 +25,19 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
+
 .button__red {
   border-color: var(--candy-pink);
   color: var(--candy-pink);
+}
+
+.button__selected {
+  background-color: var(--light-blue);
+  color: var(--dark-grey);
 }
 
 .input {

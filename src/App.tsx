@@ -9,7 +9,7 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="App">
-        <h2>Todo app</h2>
+        <h2 style={{marginBottom: '20px'}}>Todo app</h2>
         <ListContainer />
       </div>
     </ErrorBoundary>
