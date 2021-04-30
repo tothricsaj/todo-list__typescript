@@ -5,14 +5,15 @@
   border: 1px solid var(--light-blue);
 }
 
-.add-item-wrapper {
+.add_item_wrapper {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.list-item {
+.list_item {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

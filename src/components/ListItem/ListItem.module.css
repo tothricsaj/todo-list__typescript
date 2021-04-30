@@ -1,0 +1,43 @@
+.list_item {
+  width: calc(80% - 10px);
+  padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid var(--light-blue);
+  color: var(--light-blue);
+}
+
+.list_tem__ready {
+  border-color: var(--dark-blue);
+  color: var(--dark-blue);
+}
+
+.todo_name {
+  margin-left: 10px;
+}
+
+.check {
+  width: 15px;
+  height: 15px;
+  appearance: none;
+  border: 1px solid var(--light-blue);
+  cursor: pointer;
+}
+
+.check:checked {
+  background-color: var(--dark-blue);
+}
+
+.not_ready_task {
+  display: none;
+}
+
+.ready_task {
+  width: 90%;
+  border-top: 2px solid var(--dark-blue);
+  position: absolute;
+  right: 5px;
+}

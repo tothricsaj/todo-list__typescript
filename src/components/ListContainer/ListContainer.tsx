@@ -2,7 +2,7 @@ import React from 'react'
 
 import ListItem from '../ListItem/ListItem'
 
-import './ListContainer.css'
+import style from './ListContainer.module.css'
 
 interface todoListInterface {
   id: string,
@@ -11,7 +11,7 @@ interface todoListInterface {
 
 const ListContainer = (props: any) => {
 
-  const [todoList, setTodoList] = React.useState<todoListInterface[]>([])
+  const [todoList, setTodoList] = React.useState<todoListInterface[]>([{id: 'fooobarbaz', todoName: 'fooBarBaz'}])
   const [userInput, setUserInput] = React.useState('')
 
   const addListItem = () => {
@@ -40,22 +40,22 @@ const ListContainer = (props: any) => {
   }
 
   return (
-    <div className="container">
+    <div className={style.container}>
       <h3>List Container</h3>
       <ul>
         {todoList.map((item, index) => (
-          <li key={index} className="list-item">
+          <li key={index} className={style.list_item}>
             <ListItem txt={item.todoName} />
             <span
               className="button button__red"
               style={{
-                width: '20%',
+                width: 'calc(20% - 20px)',
               }}
               onClick={() => removeListItem(item.id)}>Delete</span>
           </li>
         ))}
       </ul>
-      <div className="add-item-wrapper">
+      <div className={style.add_item_wrapper}>
         <div
           className="button"
           onClick={addListItem}
