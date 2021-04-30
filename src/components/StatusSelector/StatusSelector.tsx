@@ -2,6 +2,12 @@ import React from 'react'
 
 import style from './StatusSelector.module.css'
 
+enum STATUS {
+  ALL = 'all',
+  READY = 'ready',
+  DELETED = 'deleted'
+}
+
 const StatusSelector = () => {
   const [selectedBtn, setSelectedBtn] =
     React.useState({
@@ -12,21 +18,21 @@ const StatusSelector = () => {
 
   const selectBtn = (selected: string) => {
     switch (selected) {
-      case 'all':
+      case STATUS.ALL:
         setSelectedBtn({
           all: true,
           ready: false,
           deleted: false
         })
         break
-      case 'ready':
+      case STATUS.READY:
         setSelectedBtn({
           all: false,
           ready: true,
           deleted: false
         })
         break
-      case 'deleted':
+      case STATUS.DELETED:
         setSelectedBtn({
           all: false,
           ready: false,
