@@ -2,11 +2,7 @@ import React from 'react'
 
 import style from './StatusSelector.module.css'
 
-enum STATUS {
-  ALL = 'all',
-  READY = 'ready',
-  DELETED = 'deleted'
-}
+import { STATUS } from '../../common/constants'
 
 const StatusSelector = () => {
   const [selectedBtn, setSelectedBtn] =
@@ -18,7 +14,7 @@ const StatusSelector = () => {
 
   const selectBtn = (selected: string) => {
     switch (selected) {
-      case STATUS.ALL:
+      case STATUS.DO:
         setSelectedBtn({
           all: true,
           ready: false,
@@ -54,7 +50,7 @@ const StatusSelector = () => {
         className={`button ${selectedBtn.all ? 'button__selected':null }`}
         style={{marginLeft: '0'}}
         onClick={() => selectBtn('all')}
-      >All</div>
+      >Do</div>
 
       <div
         className={`button ${selectedBtn.ready ? 'button__selected':null }`}
