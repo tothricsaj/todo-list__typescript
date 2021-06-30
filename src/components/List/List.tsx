@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import style from './ListComponent.module.css';
+import style from './List.module.css';
 
 import TodoContext, { Todo } from "../../context/TodoContext";
 import { TodoStatus, All } from "../../common/constants";
+
+import ListElem from "./ListElem/ListElem";
 
 const ListComponent = (props: any) => {
   const todos = useContext(TodoContext);
@@ -25,7 +27,7 @@ const ListComponent = (props: any) => {
     <div className={style.wrapper}>
       <p>{ props.todoStatus }</p>
       <ul>
-        {todoList.map((todo, i) => <li key={i}>{todo.title}</li>)}
+        {todoList.map((todo, i) => <ListElem key={i} index={i} title={todo.title}/>)}
       </ul>
     </div>
   );

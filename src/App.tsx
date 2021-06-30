@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
-import ListComponent from './components/ListComponent/ListComponent';
+import List from './components/List/List';
 import TodoController from './components/TodoController/TodoController';
 
 import TodoContext, { Todo } from './context/TodoContext';
@@ -38,7 +38,7 @@ function App() {
             showInProgress={() => setStatus(TodoStatus.IN_PROGRESS)}
             showReady={() => setStatus(TodoStatus.READY)}
           />
-          <ListComponent
+          <List
             todoStatus={status}
           />
         </div>
