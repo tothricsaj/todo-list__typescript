@@ -35,6 +35,10 @@
   color: var(--candy-pink);
 }
 
+.button__red:hover {
+  background-color: var(--candy-pink); 
+}
+
 .button__selected {
   background-color: var(--light-blue);
   color: var(--dark-grey);

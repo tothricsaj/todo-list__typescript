@@ -20,14 +20,22 @@ const ListComponent = (props: any) => {
         todos.filter((todo, i) => todo.status === props.todoStatus)
       );
     }
-    console.log(todoList);
-  }, [props.todoStatus]);
+  }, [props.todoStatus, todos]);
 
   return (
     <div className={style.wrapper}>
       <p>{ props.todoStatus }</p>
       <ul>
-        {todoList.map((todo, i) => <ListElem key={i} index={i} title={todo.title}/>)}
+        {todoList.map((todo, i) => (
+          <ListElem
+            key={i}
+            index={i}
+            title={todo.title}
+            status={todo.status}
+            toggleInProgress={() => props.toggleInProgress(todo.id)}
+            deleteElem={() => props.deleteTodo(todo.id)}
+          />)
+          )}
       </ul>
     </div>
   );

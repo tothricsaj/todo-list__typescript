@@ -2,6 +2,49 @@
   width: calc(100% - 20px);
   margin: 10px;
   padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   border: 1px solid var(--light-blue);
   color: var(--light-blue);
+}
+
+.inProgress {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  border-color: var(--dark-blue);
+}
+
+.cbContainer {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.cbContainer input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkMark {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  border: 1px solid var(--candy-pink);
+}
+
+.cbContainer input:checked ~ .checkMark {
+  background-color: var(--candy-pink);
+}
+
+.button__red__inProgress {
+  background-color: var(--dark-grey);
 }
