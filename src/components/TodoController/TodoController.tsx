@@ -12,6 +12,11 @@ const TodoController = (props: any) => {
 
       <div
         className="button"
+        onClick={props.showPending}
+      >Pending</div>
+
+      <div
+        className="button"
         onClick={props.showInProgress}
       >In progress</div>
 

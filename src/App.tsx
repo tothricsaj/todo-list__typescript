@@ -82,6 +82,7 @@ function App() {
           <h2 style={{marginBottom: '20px'}}>Todo app</h2>
           <TodoController 
             showAll={() => setStatus(All.ALL_TODO)}
+            showPending={() => setStatus(TodoStatus.PENDING)}
             showInProgress={() => setStatus(TodoStatus.IN_PROGRESS)}
             showReady={() => setStatus(TodoStatus.READY)}
           />

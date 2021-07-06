@@ -27,19 +27,25 @@ const ListComponent = (props: any) => {
   return (
     <div className={style.wrapper}>
       <p>{ props.todoStatus }</p>
-      <ul>
-        {todoList.map((todo, i) => (
-          <ListElem
-            key={i}
-            index={i}
-            title={todo.title}
-            status={todo.status}
-            toggleInProgress={() => props.toggleInProgress(todo.id)}
-            toggleReady={() => props.toggleReady(todo.id)}
-            deleteElem={() => props.deleteTodo(todo.id)}
-          />)
-          )}
-      </ul>
+      {todoList.length > 0 
+        ? (
+          <ul>
+            {todoList.map((todo, i) => (
+              <ListElem
+                key={i}
+                index={i}
+                title={todo.title}
+                status={todo.status}
+                toggleInProgress={() => props.toggleInProgress(todo.id)}
+                toggleReady={() => props.toggleReady(todo.id)}
+                deleteElem={() => props.deleteTodo(todo.id)}
+              />)
+              )}
+          </ul>
+        )
+        : (<h2>No todos</h2>)
+      }
+
     </div>
   );
 }
