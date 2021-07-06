@@ -15,6 +15,20 @@
   border-color: var(--dark-blue);
 }
 
+.checkReady {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--candy-pink);
+}
+
+.readyTodo {
+  background-color: var(--candy-pink);
+}
+
 .cbContainer {
   width: 10px;
   height: 10px;
@@ -22,6 +36,7 @@
   display: block;
   position: relative;
   cursor: pointer;
+  border: 1px solid var(--candy-pink);
 }
 
 .cbContainer input {

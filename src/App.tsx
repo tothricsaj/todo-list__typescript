@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 import List from './components/List/List';
@@ -40,10 +40,34 @@ function App() {
     setTodos(
       todos.map(elem => {
         if(elem.id === id) {
-          elem.status === TodoStatus.IN_PROGRESS
-            ? elem.status = TodoStatus.PENDING
-            : elem.status = TodoStatus.IN_PROGRESS 
-          ;
+          if(elem.status !== TodoStatus.IN_PROGRESS) {
+            elem.status = TodoStatus.IN_PROGRESS;
+          } else if(elem.status === TodoStatus.IN_PROGRESS) {
+            elem.status = TodoStatus.PENDING;
+          }
+
+          return elem;
+        }
+        return elem;
+      })
+    );
+  }
+
+  const toggleReady = (id: string) => {
+    console.log('toggleReady');
+    setTodos(
+      todos.map(elem => {
+        if(elem.id === id) {
+          if(elem.status !== TodoStatus.READY) {
+            console.log('elem title -> ', elem.title);
+            console.log('if statment before -> ', elem.status);
+            elem.status = TodoStatus.READY;
+            console.log('if statment after -> ', elem.status);
+          } else if (elem.status === TodoStatus.READY) {
+            console.log('else if statment before -> ', elem.status);
+            elem.status = TodoStatus.PENDING;
+            console.log('else if statment after -> ', elem.status);
+          }
           return elem;
         }
         return elem;
@@ -65,6 +89,7 @@ function App() {
             todoStatus={status}
             deleteTodo={deleteTodo}
             toggleInProgress={toggleInProgress}
+            toggleReady={toggleReady}
           />
         </div>
       </TodoContext.Provider>

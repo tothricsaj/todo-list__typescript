@@ -1,4 +1,4 @@
-import React, { EventHandler, MouseEventHandler } from "react";
+import React from "react";
 import style from './ListElem.module.css';
 import '../../../App.css';
 
@@ -9,21 +9,31 @@ const ListElem = (props: any) => {
     e.stopPropagation();
     props.deleteElem();
   }
+
+  const toggleReady = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    props.toggleReady();
+  }
+
   return (
     <li
       key={props.index}
       className={[
         style.wrapper,
-        (props.status === TodoStatus.IN_PROGRESS ? style.inProgress:null)
+        (props.status === TodoStatus.IN_PROGRESS ? style.inProgress : null)
       ].join(" ")}
       onClick={props.toggleInProgress}
     >
-      <label className={style.cbContainer}>
-        <input type="checkbox" />
-        <span className={style.checkMark}></span>
-      </label>
+      <div
+        className={[
+          style.checkReady,
+          (props.status === TodoStatus.READY ? style.readyTodo : null)
+        ].join(' ')}
+        onClick={toggleReady}
+      ></div>
       <p style={{marginLeft: '25px'}}>
-        {props.title}
+        {props.title} {props.status}
       </p>
       <div
         style={{

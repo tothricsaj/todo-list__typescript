@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import style from './List.module.css';
 
 import TodoContext, { Todo } from "../../context/TodoContext";
-import { TodoStatus, All } from "../../common/constants";
+import { All } from "../../common/constants";
 
 import ListElem from "./ListElem/ListElem";
 
@@ -11,7 +11,7 @@ const ListComponent = (props: any) => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
 
   useEffect(() => {
-    if(props.todoStatus == All.ALL_TODO) {
+    if(props.todoStatus === All.ALL_TODO) {
       setTodoList(
         todos.map((todo, i) => todo)
       );
@@ -20,6 +20,8 @@ const ListComponent = (props: any) => {
         todos.filter((todo, i) => todo.status === props.todoStatus)
       );
     }
+    console.log('listComponent todos -> ', todos);
+    // console.log(props.todoStatus)
   }, [props.todoStatus, todos]);
 
   return (
@@ -33,6 +35,7 @@ const ListComponent = (props: any) => {
             title={todo.title}
             status={todo.status}
             toggleInProgress={() => props.toggleInProgress(todo.id)}
+            toggleReady={() => props.toggleReady(todo.id)}
             deleteElem={() => props.deleteTodo(todo.id)}
           />)
           )}
