@@ -2,6 +2,7 @@
   width: calc(100% - 20px);
   margin: 10px;
   padding: 5px;
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13,6 +14,11 @@
   background-color: var(--light-blue);
   color: var(--dark-blue);
   border-color: var(--dark-blue);
+}
+
+.inReady {
+  border-color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 
 .checkReady {
@@ -27,39 +33,4 @@
 
 .readyTodo {
   background-color: var(--candy-pink);
-}
-
-.cbContainer {
-  width: 10px;
-  height: 10px;
-  margin-left: 10px;
-  display: block;
-  position: relative;
-  cursor: pointer;
-  border: 1px solid var(--candy-pink);
-}
-
-.cbContainer input {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.checkMark {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; 
-  border: 1px solid var(--candy-pink);
-}
-
-.cbContainer input:checked ~ .checkMark {
-  background-color: var(--candy-pink);
-}
-
-.button__red__inProgress {
-  background-color: var(--dark-grey);
 }

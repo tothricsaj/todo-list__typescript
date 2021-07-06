@@ -21,7 +21,8 @@ const ListElem = (props: any) => {
       key={props.index}
       className={[
         style.wrapper,
-        (props.status === TodoStatus.IN_PROGRESS ? style.inProgress : null)
+        (props.status === TodoStatus.IN_PROGRESS ? style.inProgress : null),
+        (props.status === TodoStatus.READY ? style.inReady : null),
       ].join(" ")}
       onClick={props.toggleInProgress}
     >
@@ -32,8 +33,20 @@ const ListElem = (props: any) => {
         ].join(' ')}
         onClick={toggleReady}
       ></div>
+      {props.status === TodoStatus.READY
+        ? (
+          <div style={{
+            width: '75%',
+            borderBottom: '1px solid var(--dark-blue)',
+            position: 'absolute',
+            left: '5%'
+          }}></div>
+        )
+        : null
+      }
+
       <p style={{marginLeft: '25px'}}>
-        {props.title} {props.status}
+        {props.title}
       </p>
       <div
         style={{
