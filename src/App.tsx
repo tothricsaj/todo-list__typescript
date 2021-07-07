@@ -76,12 +76,16 @@ function App() {
     );
   }
 
+  const addTodo = (todo: Todo) => setTodos([...todos, todo])
+
   return (
     <ErrorBoundary>
       <TodoContext.Provider value={todos}>
         <div className="App">
           <h2 style={{marginBottom: '20px'}}>Todo app</h2>
-          <AddTodo />
+          <AddTodo
+            addTodo={addTodo}
+          />
           <TodoController 
             status={status}
             showAll={() => setStatus(All.ALL_TODO)}
