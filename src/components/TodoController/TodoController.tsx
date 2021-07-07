@@ -11,7 +11,12 @@ const TodoController = (props: any) => {
     ) => status === elemStatus ? style.active : null
 
   return (
-    <div className={style.wrapper}>
+    <div 
+      className={[
+        'wrapper',
+        style.wrapper
+      ].join(' ')}
+    >
       <div
         className={[
           "button",

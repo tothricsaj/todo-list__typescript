@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 import List from './components/List/List';
 import TodoController from './components/TodoController/TodoController';
+import AddTodo from './components/AddTodo/AddTodo';
 
 import TodoContext, { Todo } from './context/TodoContext';
 import { TodoStatus, All } from './common/constants';
@@ -80,6 +81,7 @@ function App() {
       <TodoContext.Provider value={todos}>
         <div className="App">
           <h2 style={{marginBottom: '20px'}}>Todo app</h2>
+          <AddTodo />
           <TodoController 
             status={status}
             showAll={() => setStatus(All.ALL_TODO)}

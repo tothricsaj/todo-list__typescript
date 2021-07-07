@@ -12,6 +12,14 @@
   color: var(--dark-blue)
 }
 
+.wrapper {
+  max-width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid lightblue;
+}
+
 .button {
   min-width: 20px;
   min-height: 20px;

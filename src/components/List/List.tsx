@@ -25,7 +25,11 @@ const ListComponent = (props: any) => {
   }, [props.todoStatus, todos]);
 
   return (
-    <div className={style.wrapper}>
+    <div className={[
+        'wrapper',
+        style.wrapper
+      ].join(' ')}
+    >
       <p>{ props.todoStatus }</p>
       {todoList.length > 0 
         ? (
